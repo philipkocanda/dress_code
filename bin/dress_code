@@ -22,6 +22,9 @@ config_help = "
     #{'# required - the file to generate'.yellow}
     out_file: styleguide/index.html
 
+    #{'# required - the file to put all React components'.yellow}
+    cjsx_out_file: app/assets/react_styleguide.coffee.csjx
+
     #{'# required - the files to extract docs from'.yellow}
     glob: stylesheets/**/*.css
 
@@ -85,6 +88,7 @@ extractor = DressCode::Extractor.new({
 })
 generator = DressCode::Generator.new({
   :out_file => config['out_file'],
+  :cjsx_out_file => config['cjsx_out_file'],
   :docs => extractor.docs,
   :css => config['css'],
   :js => config['js'],
