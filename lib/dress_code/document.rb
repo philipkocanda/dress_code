@@ -6,7 +6,8 @@ class DressCode::Document
   MD = Redcarpet::Markdown.new(DressCode::Renderer.new, {
     fenced_code_blocks: true,
     strikethrough: true,
-    superscript: true
+    superscript: true,
+    tables: true
   })
 
   attr_accessor :path, :relative_path, :prose, :component
@@ -23,5 +24,8 @@ class DressCode::Document
     MD.render(@prose)
   end
 
+  def cjsx_code_blocks
+    MD.renderer.cjsx_code_blocks
+  end
 end
 
