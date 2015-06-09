@@ -1,8 +1,8 @@
 require 'redcarpet'
 require 'pygments'
-require_relative '../dress_code'
+require_relative '../dress_code_react'
 
-class DressCode::Renderer < Redcarpet::Render::HTML
+class DressCodeReact::Renderer < Redcarpet::Render::HTML
 
   attr_reader :cjsx_code_blocks
 

@@ -1,4 +1,4 @@
-# run `$ dress_code styleguide.yml` from this directory
+# run `$ dress_code_react styleguide.yml` from this directory
 glob: ../stylesheets/**/*.css
 base_dir: ../stylesheets
 out_file: styleguide.html

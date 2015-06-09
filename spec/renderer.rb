@@ -1,9 +1,9 @@
 require_relative 'spec_helper'
 
-describe DressCode::Renderer do
+describe DressCodeReact::Renderer do
 
   before :each do
-    @md = Redcarpet::Markdown.new(DressCode::Renderer.new, {
+    @md = Redcarpet::Markdown.new(DressCodeReact::Renderer.new, {
       fenced_code_blocks: true
     })
     @prose = "Hello\n\n```html\n<p>foo</p>\n```"

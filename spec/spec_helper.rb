@@ -1,4 +1,4 @@
-require_relative '../lib/dress_code'
+require_relative '../lib/dress_code_react'
 require 'fileutils'
 
 def create_test_file

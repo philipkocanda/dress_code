@@ -15,7 +15,7 @@ Its really flexible, you can:
 
 ## Installation
 
-`gem install dress_code`
+`gem install dress_code_react`
 
 Dress code requires the python library "pygments" for syntax highlighting.
 
@@ -27,11 +27,11 @@ Dress Code is generally used as a command line tool that takes a yaml config fil
 
 Usage:
 
-    dress_code [config_path]
+    dress_code_react [config_path]
 
 Example:
 
-    dress_code config/styleguide.yml
+    dress_code_react config/styleguide.yml
 
 Example config yaml file:
 
@@ -54,15 +54,15 @@ css:
   - public/stylesheets/framework.css
   - public/stylesheets/app.css
 
-# optional - Inline DressCode CSS styles, defaults to true
-dress_code_css: false
+# optional - Inline DressCodeReact CSS styles, defaults to true
+dress_code_react_css: false
 
 # optional - JavaScript files to load in the template
 js:
   - public/js/behaviors.js
 
-# optional - Inline DressCode JS, defaults to true
-dress_code_js: false
+# optional - Inline DressCodeReact JS, defaults to true
+dress_code_react_js: false
 ```
 
 ## Documentation Syntax
@@ -81,9 +81,9 @@ Comments like the following will be extracted from your stylesheets:
 
 The content of your comment block is parsed as markdown with github-style code fences. HTML code fences will be syntax highlighted and rendered (YES RENDERED!) in your styleguide.
 
-Feel free to extend `DressCode::Extractor` to match your own style of comments.
+Feel free to extend `DressCodeReact::Extractor` to match your own style of comments.
 
 ## API
 
-You can require any of the classes in lib to extend Dress Code for your particular needs. Check out `bin/dress_code` to see how to use them.
+You can require any of the classes in lib to extend Dress Code for your particular needs. Check out `bin/dress_code_react` to see how to use them.
 

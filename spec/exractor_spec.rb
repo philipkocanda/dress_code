@@ -1,10 +1,10 @@
 require_relative 'spec_helper'
 
-describe DressCode::Extractor do
+describe DressCodeReact::Extractor do
 
   before :each do
     @test_file = create_test_file
-    @extractor = DressCode::Extractor.new({
+    @extractor = DressCodeReact::Extractor.new({
       :files => [@test_file],
       :base_dir => 'tmp'
     })

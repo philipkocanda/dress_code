@@ -1,6 +1,6 @@
 require_relative 'spec_helper'
 
-describe DressCode::Document do
+describe DressCodeReact::Document do
 
   before :each do
     @attributes = {
@@ -9,7 +9,7 @@ describe DressCode::Document do
       :prose => "Hello\n\n```html\nhello\n```",
       :component => 'foobar'
     }
-    @doc = DressCode::Document.new(@attributes)
+    @doc = DressCodeReact::Document.new(@attributes)
   end
 
   it "initalizes with options" do
@@ -19,7 +19,7 @@ describe DressCode::Document do
     @doc.component.should == @attributes[:component]
   end
 
-  it "renders html with the the DressCode renderer" do
+  it "renders html with the the DressCodeReact renderer" do
     @doc.to_html.should == "<p>Hello</p>\n<div class=\"highlight\"><pre>hello\n</pre></div> <div class='code-rendered'>hello\n</div>"
   end
 

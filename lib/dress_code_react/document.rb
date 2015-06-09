@@ -1,9 +1,9 @@
-require_relative '../dress_code'
+require_relative '../dress_code_react'
 require_relative 'renderer'
 
-class DressCode::Document
+class DressCodeReact::Document
 
-  MD = Redcarpet::Markdown.new(DressCode::Renderer.new, {
+  MD = Redcarpet::Markdown.new(DressCodeReact::Renderer.new, {
     fenced_code_blocks: true,
     strikethrough: true,
     superscript: true,

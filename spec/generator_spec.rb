@@ -1,9 +1,9 @@
 require_relative 'spec_helper'
 
-describe DressCode::Generator do
+describe DressCodeReact::Generator do
 
   before :each do
-    doc = DressCode::Document.new({
+    doc = DressCodeReact::Document.new({
       :component => 'button',
       :prose => "```html\n<button>I am a button</button>\n```",
       :path => '/whever/button.css',
@@ -13,7 +13,7 @@ describe DressCode::Generator do
   end
 
   it "generates the styleguide html file" do
-    generator = DressCode::Generator.new({
+    generator = DressCodeReact::Generator.new({
       :out_file => 'tmp/styleguide.html',
       :docs => @docs
     })

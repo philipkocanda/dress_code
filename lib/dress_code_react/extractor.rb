@@ -1,7 +1,7 @@
-require_relative '../dress_code'
+require_relative '../dress_code_react'
 require_relative 'document'
 
-class DressCode::Extractor
+class DressCodeReact::Extractor
 
   attr_accessor :files
 
@@ -33,7 +33,7 @@ class DressCode::Extractor
 
   # must return an instance of Doc
   def create_doc(match, path)
-    DressCode::Document.new({
+    DressCodeReact::Document.new({
       :component => match[0],
       :prose => match[1].strip,
       :path => path,

@@ -1,4 +1,4 @@
-# run `$ dress_code styleguide.yml` from this directory
+# run `$ dress_code_react styleguide.yml` from this directory
 glob: ../stylesheets/**/*.css
 template: template.mustache
 base_dir: ../stylesheets
