@@ -54,14 +54,14 @@ css:
   - public/stylesheets/framework.css
   - public/stylesheets/app.css
 
-# optional - Inline DressCodeReact CSS styles, defaults to true
+# optional - Inline CSS styles, defaults to true
 dress_code_react_css: false
 
 # optional - JavaScript files to load in the template
 js:
   - public/js/behaviors.js
 
-# optional - Inline DressCodeReact JS, defaults to true
+# optional - Inline JS, defaults to true
 dress_code_react_js: false
 ```
 
