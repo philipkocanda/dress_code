@@ -55,14 +55,14 @@ css:
   - public/stylesheets/app.css
 
 # optional - Inline CSS styles, defaults to true
-dress_code_react_css: false
+inline_css: false
 
 # optional - JavaScript files to load in the template
 js:
   - public/js/behaviors.js
 
 # optional - Inline JS, defaults to true
-dress_code_react_js: false
+inline_js: false
 ```
 
 ## Documentation Syntax

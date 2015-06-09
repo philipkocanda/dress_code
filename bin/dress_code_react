@@ -42,14 +42,14 @@ config_help = "
 
 
     #{'# optional - Inline DressCodeReact CSS styles, defaults to true'.yellow}
-    dress_code_react_css: false
+    inline_css: false
 
     #{'# optional - JavaScript files to load in the template'.yellow}
     js:
       - public/js/behaviors.js
 
     #{'# optional - Inline DressCodeReact JS, defaults to true'.yellow}
-    dress_code_react_js: false
+    inline_js: false
 
 "
 
@@ -92,8 +92,8 @@ generator = DressCodeReact::Generator.new({
   :docs => extractor.docs,
   :css => config['css'],
   :js => config['js'],
-  :dress_code_react_css => config['dress_code_react_css'],
-  :dress_code_react_js => config['dress_code_react_js'],
+  :inline_css => config['inline_css'],
+  :inline_js => config['inline_js'],
   :template => config['template']
 })
 generator.generate()

@@ -13,8 +13,8 @@ class DressCodeReact::Generator
     @css = opts[:css]
     @js = opts[:js]
     @template = opts[:template] || TEMPLATE
-    @inline_css = opts[:dress_code_react_css].nil? ? true : !!opts[:dress_code_react_css]
-    @inline_js = opts[:dress_code_react_js].nil? ? true : !!opts[:dress_code_react_js]
+    @inline_css = opts[:inline_css].nil? ? true : !!opts[:inline_css]
+    @inline_js = opts[:inline_js].nil? ? true : !!opts[:inline_js]
   end
 
   def generate
@@ -24,8 +24,8 @@ class DressCodeReact::Generator
       :docs => map_docs,
       :css => @css,
       :js => @js,
-      :dress_code_react_css => dress_code_react_css,
-      :dress_code_react_js => "#{dress_code_react_js}"
+      :dress_code_css => fetch_inline_css,
+      :dress_code_js => fetch_inline_js
     }))
 
     code_blocks = @docs.first.cjsx_code_blocks
@@ -42,16 +42,16 @@ class DressCodeReact::Generator
       block = block.chomp
 
       component_name = "ReactSGComponent#{index}"
-      components <<
-        "window.#{component_name} = React.createClass\n" \
-        "  displayName: '#{component_name}'\n\n"
+      components << "window.#{component_name} = "
 
       # If code block has method definitions, do nothing.
       # Otherwise, put the code inside the "render" method.
       if block.include?(': ->')
-        block = indent_lines(block, 2)
         components << "#{block}\n\n"
       else
+        components << "React.createClass\n" \
+          "  displayName: '#{component_name}'\n\n"
+
         block = indent_lines(block, 4)
         components << "  render: ->\n" \
           "#{block}\n\n"
@@ -72,12 +72,12 @@ class DressCodeReact::Generator
     lines.gsub(/(.+)/, "#{spaces}\\1")
   end
 
-  def dress_code_react_css
+  def fetch_inline_css
     return unless @inline_css
     File.read("#{STATIC}/base.css") + File.read("#{STATIC}/github.css")
   end
 
-  def dress_code_react_js
+  def fetch_inline_js
     return unless @inline_js
     File.read("#{STATIC}/docs.js")
   end
