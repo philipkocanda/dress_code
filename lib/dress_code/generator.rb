@@ -36,7 +36,7 @@ class DressCode::Generator
   # Render all React components to corresponding <div> elements on load.
   def generate_react_components(code_blocks)
     components = ''
-    load_blocks = "onLoad ->\n"
+    load_blocks = "$(document).ready ->\n"
 
     code_blocks.each_with_index do |block, index|
       block = block.chomp
